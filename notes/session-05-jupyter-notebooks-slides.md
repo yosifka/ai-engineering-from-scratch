@@ -62,12 +62,16 @@ graph LR
     A --> E["!shell_cmd\nRuns shell commands directly (e.g. !uv pip install)"]
 ```
 
+#### Micro vs. Macro Timing Comparison:
+- **`%timeit` (Micro-benchmarking / Statistical Timing):** Runs the code in a loop many times (thousands of iterations) to calculate mean and standard deviation (`mean ± std`). Used for comparing fast operations (e.g., list comprehension vs. vectorization).
+- **`%%time` (One-Shot Wall Timing):** Runs the entire cell **once** from start to finish and reports elapsed wall time and CPU time. Used for long operations (e.g., dataset loading, training epochs) where repeating 1,000 times would hang or crash your session.
+
 #### Syntax Reference:
 ```python
-# Micro-benchmark a single operation
+# Micro-benchmark a single operation (loops multiple times)
 %timeit np.random.randn(10000)
 
-# Time an entire training block
+# Time an entire training block (runs once)
 %%time
 train_model(epochs=10)
 

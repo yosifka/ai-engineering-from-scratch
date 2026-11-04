@@ -1,20 +1,20 @@
 # 📌 AI Engineering — Resume Next Session
 
-**Date Updated:** November 3, 2026  
+**Date Updated:** November 4, 2026  
 **Curriculum:** AI Engineering from Scratch  
-**Status:** Phase 00 (Lessons 01–07 Complete ✅)  
-**Last Session:** Lesson 07: Docker for AI (All 4 hands-on exercises + quiz complete 100%)  
-**Next Session:** Phase 00, Lesson 08: Editor Setup  
+**Status:** Phase 00 (Lessons 01–10 Complete ✅)  
+**Last Session:** Lesson 10: Terminal & Shell (All 4 hands-on exercises complete: tmux, aliases, log parsing, SSH config)  
+**Next Session:** Phase 00, Lesson 11: Linux for AI  
+**Package Manager Rule:** Always use `uv` (`uv pip install ...`).  
 
 ---
 
-### 📝 Lesson 07 Recap: Docker for AI
-- **Container vs VM:** Isolated user-space process sharing host kernel vs. full virtualized guest OS.
-- **Base Images:** `-devel` (7.54 GB with `nvcc` and compilation toolchains) vs. `-runtime` (5.00 GB clean execution, saving 2.54 GB).
-- **Hardware Passthrough:** NVIDIA Container Toolkit bridges host GPUs to containers (`--gpus all`). (Apple Silicon runs natively with MPS on macOS).
-- **Volumes:** Volume mounts (`-v ~/models:/models`) ensure large AI weights and datasets persist across container stops/rebuilds.
-- **Docker Compose:** Spawns multi-service topologies (AI runtime + Qdrant vector database) connected via internal DNS.
-- **Port Mapping:** `-p <HOST_PORT>:<CONTAINER_PORT>` (mapped host port 5001 to container port 5000 to avoid Mac AirPlay conflicts on 5000).
+### 📝 Lesson 10 Recap: Terminal & Shell
+- **tmux Multiplexer:** Built a 3-pane workflow (`htop` + background timer + script runner). Mastered prefix key `Ctrl + b`, detaching (`Ctrl + b d`), listing sessions (`tmux ls`), and reattaching (`tmux attach -t training`).
+- **AI Shell Aliases:** Added production aliases (`ae` for venv activation, `uvvenv`, `tls`, `psg`) to `~/.zshrc`.
+- **Log Parsing Pipelines:** Built stream-filtering pipelines with `grep`, `awk '{print $NF}'`, and `tail` to extract raw loss metrics from 100-epoch training logs.
+- **Output Redirection:** Mastered stdout/stderr redirection (`> output.log 2>&1`) to preserve full training and error logs.
+- **SSH & Port Forwarding:** Configured `~/.ssh/config` for alias resolution (`ssh gpu-practice`) and reviewed local port forwarding (`ssh -L 8888:localhost:8888`) for remote Jupyter/TensorBoard access.
 
 ---
 
@@ -36,4 +36,4 @@
    ```
 
 4. **Prompt to start the session:**
-   > *"I'm ready for Phase 00, Lesson 08: Editor Setup!"*
+   > *"I'm ready for Phase 00, Lesson 11: Linux for AI!"*
